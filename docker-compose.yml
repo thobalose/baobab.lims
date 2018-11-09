@@ -1,5 +1,13 @@
 version: "2"
 services:
+  nginx:
+    restart: always
+    image: quay.io/baobab-lims/baobab-nginx:1.15
+    container_name: baobab_nginx
+    ports:
+      - "80:80"
+    links:
+      - baobab_lims
   baobab_lims:
     restart: always
     image: quay.io/baobab-lims/baobab-lims
